@@ -1,16 +1,1 @@
 api_inctruction_url = 'https://developer.spotify.com/documentation/web-api/reference/search'
-
-CLIENT_ID = "959a21a747384187905340ef72ce5efc"
-CLIENT_SECRET = "ff4e29e8944e4b0aa601a009bc582dc7"
-REFRESH_TOKEN = "AQBtWc3Srs0XJsSCc5OiivsrbLpcyAtOfRCjuVMakpjHZUXQYbaztn3DEef3Tihnz-GMzarkybR6fwVSNIjX270pzAXlgKkNMp4cIpRWRUVTnhHXlK8AIN6QuRYELd04PBk"
-
-def refresh_access_token():
-    url = "https://accounts.spotify.com/api/token"
-    data = {
-        "grant_type": "refresh_token",
-        "refresh_token": REFRESH_TOKEN,
-        "client_id": CLIENT_ID,
-        "client_secret": CLIENT_SECRET
-    }
-    response = requests.post(url, data=data)
-    return response.json()["access_token"]
